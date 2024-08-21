@@ -1,0 +1,15 @@
+{
+    "name": "grafana-integrtion",
+    "version": "0.0.1",
+    "description": "Project Description",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "the repositories url"
+    },
+    "author": "Rahul Bhandari",
+    "license": "N/A"
+  }
