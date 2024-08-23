@@ -1,8 +1,7 @@
-const { resolve } = require("path");
-
-function getRandomValue(array) {
-
-}
+function getRandomValue(array){
+    const randomElement = array[Math.floor(Math.random() * array.length)];
+    return randomElement;
+  }
 
 function doSomeHeavyTask() {
     const ms = getRandomValue([100, 150, 200, 250, 300, 500, 700, 10000, 2000000]);
