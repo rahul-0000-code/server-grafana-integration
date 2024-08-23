@@ -35,14 +35,11 @@ Nodejs, Docker. Grafana and some libraries
    **Average Memory Usage**
 
    `avg(nodejs_external_memory_bytes / 1024 / 1024) by (service)`
-4. Install Prometheus [Alertmanager](https://prometheus.io/download/) and update file alertmanager.yml.
 
    ![Untitled3](https://user-images.githubusercontent.com/62415557/165243532-093e9d13-a696-4979-bb03-7e9d9d253741.PNG)
 
-   Run `./alertmanager --config.file=alertmanager.yml` and open http://localhost:9093.
 
-   Spam requests to test alert: `curl http://localhost:3001/?[1-100]`.
-5. Run Grafana by Docker
+4. Run Grafana by Docker
 
    `docker run -i -p 3000:3000 grafana/grafana`. Open http://localhost:3000.
 
