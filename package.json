@@ -4,12 +4,16 @@
     "description": "Project Description",
     "main": "index.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-      "type": "git",
-      "url": "the repositories url"
+        "type": "git",
+        "url": "the repositories url"
     },
     "author": "Rahul Bhandari",
-    "license": "N/A"
-  }
+    "license": "N/A",
+    "dependencies": {
+        "express": "^4.19.2",
+        "prom-client": "^15.1.3"
+    }
+}

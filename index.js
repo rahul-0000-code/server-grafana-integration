@@ -1,9 +1,12 @@
 const express = require('express');
-const { doSomeHeavyTask }  = require("../util");
+const client = require("prom-client"); //for metric collection 
+const { doSomeHeavyTask }  = require("./util");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+const collectDefaultMetrics = client.collectDefaultMetrics;
+collectDefaultMetrics({ register: client.register });
 
 app.get("/", (req, res) => {
     return res.json({
@@ -28,7 +31,13 @@ app.get("/slow", async (req, res) => {
                 });
         }
     }
-})
+)
+
+app.get("/metrics", async (req, res) => {
+    res.setHeader('Content-Type', client.register.contentType)
+    const metrics = await client.register.metrics();
+    res.send(metrics);
+});
 
 app.listen(PORT, () => {
     console.log(`Bhai Server is running on port ${PORT}`);
